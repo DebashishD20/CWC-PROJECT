@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAPH THEORY|D20CLUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Permanent+Marker&family=Righteous&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .navbar{
+        width: 100%;
+        display: flex;
+        
+        background-color:rgb(2, 2, 17) ;
+        /* background-color: rgb(202, 197, 197); */
+        align-items: center;
+        flex-wrap: wrap;
+        
+    }
+    .logo{
+        display: inline-block;
+    }
+    .logo img{
+        height: 100px;
+        border-radius: 50%;
+        padding: 13px;
+        
+    }
+     .items{
+        width: max-content;
+        height: 25px;
+        
+        
+    display: flex;
+    margin: auto;
+    align-items: center;
+    
+    }
+    .items a{
+        text-decoration: none;
+        
+        font-size: 23px;
+       
+        padding: 15px;
+        color: antiquewhite;
+        /* color: #252839; */
+    }
+    .search{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .search input{
+        border-radius: 6px;
+        margin-right: 10px;
+        height: 23px;
+
+    }
+    .btn{
+        display: block;
+        width: 45px;
+        margin: auto;
+        margin-top: 2px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+   
+    @media (max-width:550px){
+        .navbar{
+            
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+        }
+        .items{
+            margin-bottom: 42px;
+            margin-top: 20px;
+            
+        }
+        .items a{
+            padding: 5px;
+            font-size: 13px;
+            transition: all 0.2s ease-out;
+        }
+    }
+    .items a:hover{
+        /* background-color: rgb(121, 115, 115); */
+        /* color: rgb(22, 22, 82); */
+        color: white;
+        /* text-decoration: underline; */
+      /* border-radius: 23px; */
+      /* border-bottom: 2px solid gray; */
+      padding: 1px 4px;
+        transform: scale(1.1);
+        box-shadow: 0 0 6px gray;
+        /* color: #252839; */
+       
+    }
+    /* BODY */
+    .body{
+        width: 100%;
+        height: 500px;
+       
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color:#252839 ;
+       
+    }
+    
+    #title {
+        display: inline-flex;
+        margin-left: 2%;
+    }
+    #title li{
+        list-style: none;
+        font-size: 90px;
+        font-weight: 500;
+        color: #FC6D60 ;
+    }
+    #title li span{
+        position: relative;
+    }
+    #title li span::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-left: 2px solid #FC6D60;
+animation: typing 7s steps(6) infinite;
+background: #252839;
+    }
+    @keyframes typing {
+        100%{
+            left: 100%;
+            margin: 0 -60px 0 60px ;
+        }
+    }
+    #signin{
+        height: 350px;
+        width: 350px;
+        border: 2px solid #FC6D60;
+        border-radius: 10px;
+        
+        box-sizing: border-box;
+        color: white;
+        margin-left: 16rem;
+        
+    }
+    #signin form input{
+        margin-top: 25px;
+        height: 20px;
+        width: 230px;
+        color: black;
+        border-radius: 7px;
+        display: block;
+       margin: auto;
+       margin-top: 23px;
+    }
+    #signin h3{
+        padding: 10px;
+        display: block;
+        text-align: center;
+           }
+           .btn1{
+               display: block;
+               margin: auto;
+               margin-top: 10px;
+               margin-bottom: 10px;
+               width: 70px;
+               border-radius: 7px;
+               background-color: rgb(55, 55, 218);
+               color: white;
+           }
+           #title1{
+               color:transparent ;
+           }
+/* #login{
+               text-align: center;
+               color: white;} 
+               .form2 {
+                  display: flex;
+                  flex-direction: row;
+                 justify-content: center;
+                 align-items: center;
+                 padding: 3px; 
+                  margin: -32px;
+               }  
+                .form2 form input{
+                   width: 23px;
+               } */
+               
+           
+    @media (max-width:1220px) and (min-width:320px){
+        
+        #title{
+            display: none;
+        }
+#title1{
+    
+    color: white;
+   margin-top: -95px;
+   margin-bottom: 5px;
+}
+.body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+#signin{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+    }
+    @media(max-width:320px){
+        .body{
+            display: flex;
+           
+           margin: auto;
+        }
+        #title{
+            display: none;
+        }
+        #title1{
+    display: block;
+    margin: auto;
+    color: white;
+   margin-top: 4px;
+   
+}
+#signin{
+    margin: 22px;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+#signin form input{
+    width:200px
+}
+    }
+   
+    
+   .contents{
+       width:100%;
+       height:700px;
+       
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+      background-color: rgb(202, 197, 197);
+      
+     
+   }
+   .cont{
+      
+     
+    margin-bottom: 13px;
+       font-size: 245%;
+      
+       padding: auto;
+       border-radius: 57px;
+       
+       
+      color: olivedrab;
+       
+       font-family: 'Righteous', cursive;
+   }
+   .box{
+       width:250px;
+       height:250px;
+      
+       display: inline-block;
+       margin: 10px;
+       
+       background-color: #1e1f29;
+       
+      
+   }
+   .boxes{
+       width: 95vw;
+       height: 550px;
+       
+       box-sizing: border-box;
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       overflow: scroll;
+       box-shadow:0 0 15px #1e1f29;
+   }
+   .box iframe{
+    
+    display: block;
+    margin: auto;
+    
+    background-color: white;
+    margin-top: 17px;
+
+   }
+   .b1{
+       text-align: center;
+       font-size: 17px;
+       padding: 17px;
+       color: white;
+       margin-top: -13px;
+   }
+   .box a{
+      
+      text-decoration: none;
+      height: 19px;
+      width:80px;
+      
+      display: block;
+      margin: auto;
+      text-align: center;
+      color: white;
+      box-shadow: 3px 2px 6px red;
+      background-color: black;
+
+   }
+   .box a:hover{
+       transform: scale(1.3);
+   }
+   #box7,#box8,#box9,#box10{
+       display: flex;
+       justify-content: center;
+       align-items: center; 
+   }
+   .box img{
+       height: 133px;
+       width: 195px;
+       border-radius: 17px;
+   }
+  
+   .practise{
+       height: 350px;
+       width: 100%;
+       
+       display: flex;
+       
+       background-color: rgb(202, 197, 197);
+      
+   } 
+   #quote{
+       text-align: center;
+       height: max-content;
+       width: 100%;
+      
+       font-size: 3vw;
+      display: block;
+      margin: auto;
+       font-weight: 400;
+       background-color: rgb(202, 197, 197);
+       
+       color: rgb(196, 67, 67);
+       font-family: 'Righteous', cursive;
+   }
+   
+   .pracbox{
+       width: 50%;
+       height: 75%;
+       border-right: 2px solid #343541;
+       
+     margin-left: 5%;
+     display: flex;
+     flex-direction: column;
+     
+     justify-content: center;
+     
+       
+   }
+   .practiselinks{
+       width: 50%;
+       height: 50%;
+      
+       display: flex;
+       align-items: center;
+       word-wrap: break-word;
+     
+   }
+   .practiselinks img{
+       height: 50%;
+       width: 30%;
+       border-radius: 10%;
+   }
+   .practiselinks a{
+       margin-left: 13%;
+       font-size: 2vw;
+       word-wrap: break-word;
+       text-decoration: none;
+   }
+   .competition{
+       width: 50%;
+       height: 70%;
+      
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+      
+      
+   }
+   #heading{
+       text-align: center;
+       font-size: 2vw;
+       color: olivedrab;
+      position: relative;
+      top: 27%;
+   }
+   #enroll{
+       height: 50px;
+       width: 120px;
+      
+       display: flex;
+       margin: auto;
+       justify-content: center;
+       align-items: center;
+      
+       background-color: red;
+       border-radius: 9px ;
+   }
+   #enroll a{
+       
+       font-size: 16px;
+       text-decoration: none;
+      
+       color: white;
+       animation: animate 0.5s linear infinite;
+
+      
+   }
+   @keyframes animate{
+       0%{
+           color: white;
+           
+           transform: scale(1.3);
+           
+       }
+   }
+   
+   .end{
+       width: 100%;
+       height: 250px;
+      
+   }
+   #socialmedia{
+       width: 100%;
+       height: 80%;
+      
+       text-align: center;
+       font-size: 33px;
+       background-color: rgb(202, 197, 197);
+       font-family: 'Righteous', cursive;
+   }
+   #icons{
+       width: 100%;
+       height: 50%;
+       
+       display: inline-block;
+       
+   }
+   #icons a img{
+       height: 40%;
+       width: 3%;
+       /* border-radius: 50%; */
+       position: relative;
+       top: 18px;
+       padding: 23px;
+   }
+   #twitter img{
+       border-radius: 50%;
+   }
+   
+   #icons a img:hover{
+       transform: scale(1.3);
+       opacity: 0.7;
+   }
+   #rights{
+       width: 100%;
+       height: 30%;
+       background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+   }
+</style>
+
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <img src="LogoMakerCa-1628421436318.png" alt="">
+        </div>
+<div class="items">
+    <a href="#">Home</a>
+    <a href="aboutus.html"target="_black">About Us</a>
+    <a href="#">Query</a>
+    <a href="#">Courses</a>
+    <!-- <button id="dtn">Courses</button> -->
+</div>
+<div class="search">
+    <input type="text" name="searc" placeholder="search">
+    <button class="btn">search</button>
+</div>
+</nav>
+<section class="body">
+    <div id="title">
+       <ul>
+           <li><span>GRAPH</span></li>
+           <li><span>THEORY</span></li>
+       </ul>
+    </div>
+    <div id="title1">
+        
+        <h1>GRAPH THEORY</h1>
+    </div>
+    <div id="signin">
+<h3>SIGN IN</h3>
+<form action="backend.php">
+    <input type="text" name="naam" id="name" placeholder="Name">
+    <input type="email" name="email" id="mail" placeholder="@gmail.com">
+    <input type="password" name="pass" id="password" placeholder="password">
+    <button class="btn1">Sign in</button>
+    
+</form>
+
+<hr>
+    
+        <!-- <h3 id="login"> Log In</h3>
+        <div class="form2">
+        <form action="#">
+            <input type="email" name="email1" id="mail1" placeholder="@gmail.com" >
+    <input type="password" name="pass1" id="password1" placeholder="password" >
+        </form>
+    </div> -->
+</div>
+    </div>
+</section>
+    <section class="contents">
+<div class="cont">CONTENTS</div>
+<div class="boxes">
+<div class="box" id="box1">
+    <iframe width="195" height="133" src="https://www.youtube.com/embed/HkNdNpKUByM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+    <div class="b1">Introduction</div>
+    <a href="chap1.html"target="_blank">Topic Wise</a>
+</div>
+<div class="box" id="box2">
+    <iframe width="195" height="133" src="https://www.youtube.com/embed/zEQZpTizgLo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="b1">Trees</div>
+    <a href="anim.html"target="_blank">Topic Wise</a>
+</div>
+<div class="box" id="box3">
+    <iframe width="195" height="133" src="https://www.youtube.com/embed/tbL6lTTFqm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="b1">Matching</div>
+    <a href="anim.html"target="_blank">Topic Wise</a>
+</div>
+<div class="box" id="box4">
+    <iframe width="195" height="133" src="https://www.youtube.com/embed/Lrj7kMJq1GU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="b1">Coloring</div>
+    <a href="anim.html"target="_blank">Topic Wise</a>
+</div>
+<div class="box" id="box5">
+    <iframe width="195" height="133" src="https://www.youtube.com/embed/QoiR945_WI4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="b1">Planer Graphs</div>
+    <a href="anim.html"target="_blank">Topic Wise</a>
+</div>
+<div class="box" id="box6">
+    <iframe width="195" height="133" src="https://www.youtube.com/embed/4IrESjFU_MU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="b1">Hamiltonian Cycle</div>
+    <a href="anim.html"target="_blank">Topic Wise</a>
+</div>
+<div class="box" id="box7">
+    <img src="https://horticulture.tg.nic.in/img/work-in-progress-wip.jpg" alt="work in progress">
+</div>
+<div class="box" id="box8">
+    <img src="https://horticulture.tg.nic.in/img/work-in-progress-wip.jpg" alt="work in progress">
+</div>
+<div class="box" id="box9">
+    <img src="https://horticulture.tg.nic.in/img/work-in-progress-wip.jpg" alt="work in progress">
+</div>
+<div class="box" id="box10">
+    <img src="https://horticulture.tg.nic.in/img/work-in-progress-wip.jpg" alt="work in progress">
+</div>
+</div>
+    </section>
+    <div id="quote">
+        Practise! will make you Invinsible
+    </div>
+    <section class="practise">
+
+
+<div class="pracbox">
+    
+    <div class="practiselinks" id="gfg">
+        <img src="https://pbs.twimg.com/profile_images/1304985167476523008/QNHrwL2q.jpg" alt="geeksforgeeks">
+        <a href="https://www.geeksforgeeks.org/graph-theory-gq/">Geeks for Geeks</a>
+    </div>
+    <div class="practiselinks" id="sanfoundry">
+        <img src="https://www.sanfoundry.com/wp-content/uploads/2021/02/sanfoundry-logo.png" alt="Sanfoundry">
+        <a href="https://www.sanfoundry.com/discrete-mathematics-questions-answers-graphs-properties/">sanfoundry</a>
+    </div>
+</div>
+<div class="competition">
+<div id="heading">Compete! Show Your Dominance</div>
+<div id="enroll">
+    <a href="#">Enroll Now</a>
+</div>
+</div>
+
+    </section>
+    <section class="end">
+        <div id="socialmedia">
+Join with Us
+<div id="icons">
+<a href="https://discord.gg/xtvXyJUm"target="_blank">
+    <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/91_Discord_logo_logos-512.png" alt="discordlogo">
+</a>
+<a href="https://www.instagram.com/iter.coding.wizards/"target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="instalogo"></a>
+<a href="" id="twitter"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJpEBaypqBvS9wb-QuctMgJP9_DZVH-w_iHg&usqp=CAU" alt="twitterlogo"></a>
+<a href="https://t.me/cwciter"target="_blank" id="telegram"><img src="https://www.logo.wine/a/logo/Telegram_(software)/Telegram_(software)-Logo.wine.svg" alt="telegramlogo"></a>
+</div>
+        </div>
+        <div id="rights">
+All Rights Reserved
+        </div>
+    </section>
+</body>
+</html>
+<!-- https://1000logos.net/wp-content/uploads/2016/11/Facebook-logo.jpg -->

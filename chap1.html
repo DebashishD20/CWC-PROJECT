@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chap 1|Graph Theory</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        background-color: rgb(201, 192, 192);
+        color: rgb(121, 20, 20);
+        font-weight: 200;
+    }
+    .nav{
+        width: 100%;
+        height: 50px;
+        /* border: 2px solid purple; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .nav button{
+        width: 20%;
+        height: max-content;
+        font-family: 'Abril Fatface', cursive;
+        letter-spacing: 2px;
+       border: none;
+    }
+    .modes{
+        background-color: #252839;
+        color: bisque;
+    }
+    .content{
+        width: 100%;
+        height:135vw;
+        /* border: 2px solid black; */
+        display: flex;
+        
+       
+    }
+    
+    .videos{
+        width: 50%;
+        height: max-content;
+       border-right: 2px solid grey;
+        display: flex;
+      justify-content: center;
+        flex-wrap: wrap;
+        
+    }
+    .videos iframe{
+        margin: 5% 0;
+    }
+    .rightside{
+        width: 50%;
+        height: 130vw;
+        /* border: 2px solid green; */
+    }
+    .notes{
+        width: 100%;
+        height: 110vw;
+        /* border: 2px solid blue; */
+        overflow: scroll;
+    }
+    .search{
+        width: 100%;
+        height: 50px;
+        /* border: 2px solid yellow; */
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+    }
+    .search input{
+        height: 60%;
+        width: 40%;
+    }
+    #btn {
+        background-color: tomato;
+        height: 60%;
+        width:20px;
+        color: white;
+        border: none;
+    }
+    #btn:hover{
+        opacity: 0.7;
+    }
+    .para{
+      
+        padding: 33px;
+        font-size: large;
+    }
+    .notes img{
+        width: 70%;
+        height: 10%;
+        display: block;
+        margin: auto;
+    }
+    .socialmedia{
+        width: 100%;
+        height: 15vw;
+        /* border: 2px solid purple; */
+        
+    }
+    h1{
+        text-align: center;
+        font-size: x-large;
+        padding-top: 10%;
+        padding-bottom: 5%;
+    }
+    #icons{
+        width: 100%;
+        height: 50px;
+       /* border: 2px solid red; */
+       display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .socialmedia a img{
+        height: 55px;
+        width: 55px;
+       border-radius: 50%;
+        padding: 13px;
+        
+    }
+    @media (max-width:800px){
+        .socialmedia a img{
+        height: 25px;
+        width: 25px;
+       border-radius: 50%;
+        padding: 6px;
+        
+    }
+    }
+    .socialmedia a img:hover{
+        transform: scale(1.3);
+        opacity: 0.7;
+    }
+    #home{
+       transform: scale(2);
+       padding: 13px;
+       color: rgb(95, 190, 32);
+    }
+    
+</style>
+<body>
+   
+   <div class="nav">
+       <a href="index.html"target="_blank" id="home"><i class="fa fa-home"></i></a>
+    <button onclick="myFunction()">CHANGE MODE</button>
+</div>
+    <script>
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("modes");
+           
+        }
+        </script>
+
+    <section class="content">
+        <section class="videos">
+            <iframe width="90%" height="40%" src="https://www.youtube.com/embed/ru0PZSlSb00?list=PLmXKhU9FNesS7GpOddHDX3ZCl86_cwcIn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="90%" height="30%" src="https://www.youtube.com/embed/CIWwdWowj8A?list=PLmXKhU9FNesS7GpOddHDX3ZCl86_cwcIn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="90%" height="30%" src="https://www.youtube.com/embed/kzqyzP6n594?list=PLmXKhU9FNesS7GpOddHDX3ZCl86_cwcIn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="90%" height="30%" src="https://www.youtube.com/embed/4uilSwVeg0g?list=PLmXKhU9FNesS7GpOddHDX3ZCl86_cwcIn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="90%" height="30%" src="https://www.youtube.com/embed/j94vc827rrk?list=PLmXKhU9FNesS7GpOddHDX3ZCl86_cwcIn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="90%" height="30%" src="https://www.youtube.com/embed/w61Cwm3iqX0?list=PLmXKhU9FNesS7GpOddHDX3ZCl86_cwcIn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="90%" height="30%" src="https://www.youtube.com/embed/C2bwdO1vQcM?list=PLmXKhU9FNesS7GpOddHDX3ZCl86_cwcIn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="90%" height="30%" src="https://www.youtube.com/embed/07Q6N-WeaGM?list=PLmXKhU9FNesS7GpOddHDX3ZCl86_cwcIn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="90%" height="30%" src="https://www.youtube.com/embed/3-oUfRnXl_g?list=PLmXKhU9FNesS7GpOddHDX3ZCl86_cwcIn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        <section class="rightside">
+        <section class="notes">
+            <div class="search">
+<input type="text" name="seaching" id="searching" placeholder="search">
+<button id="btn"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="para">
+    <p>A graph is a data structure that is defined by two components :
+
+        A node or a vertex.
+        An edge E or ordered pair is a connection between two nodes u,v that is identified by unique pair(u,v). The pair (u,v) is ordered because (u,v) is not same as (v,u) in case of directed graph.The edge may have a weight or is set to one in case of unweighted graph.
+        Consider the given below graph,
+       
+        </p>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/graph-5.jpg" alt="">
+        <p>
+            Applications: <br>
+Graph is a data structure which is used extensively in our real-life.
+
+
+
+Social Network: Each user is represented as a node and all their activities,suggestion and friend list are represented as an edge between the nodes.
+Google Maps: Various locations are represented as vertices or nodes and the roads are represented as edges and graph theory is used to find shortest path between two nodes.
+Recommendations on e-commerce websites: The “Recommendations for you” section on various e-commerce websites uses graph theory to recommend items of similar type to user’s choice.
+Graph theory is also used to study molecules in chemistry and physics.
+
+
+More on graphs:
+Characteristics of graphs:
+
+Adjacent node: A node ‘v’ is said to be adjacent node of node ‘u’ if and only if there exists an edge between ‘u’ and ‘v’.
+Degree of a node: In an undirected graph the number of nodes incident on a node is the degree of the node.
+In case of directed graph ,Indegree of the node is the number of arriving edges to a node.
+Outdegree of the node is the number of departing edges to a node.
+        </p>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/undirected-graph.jpg" alt="">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/directedgraph.jpg" alt="">
+        <p>
+            Path: <br> A path of length ‘n’ from node ‘u’ to node ‘v’ is defined as sequence of n+1 nodes.
+P(u,v)=(v0,v1,v2,v3…….vn)
+A path is simple if all the nodes are distinct,exception is source and destination are same.
+
+Isolated node: A node with degree 0 is known as isolated node.Isolated node can be found by Breadth first search(BFS). It finds its application in LAN network in finding whether a system is connected or not.
+        </p>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/graphimg-1.jpg" alt="">
+        <p>
+            Directed graph: <br>
+A graph in which the direction of the edge is defined to a particular node is a directed graph.
+Directed Acyclic graph: It is a directed graph with no cycle.For a vertex ‘v’ in DAG there is no directed edge starting and ending with vertex ‘v’. <br>
+a) Application <br>:Critical game analysis,expression tree evaluation,game evaluation.
+Tree: A tree is just a restricted form of graph.That is, it is a DAG with a restriction that a child can have only one parent.
+Undirected graph:
+A graph in which the direction of the edge is not defined.So if an edge exists between node ‘u’ and ‘v’,then there is a path from node ‘u’ to ‘v’ and vice versa.
+Connected graph: A graph is connected when there is a path between every pair of vertices.In a connected graph there is no unreachable node.
+Complete graph: A graph in which each pair of graph vertices is connected by an edge.In other words,every node ‘u’ is adjacent to every other node ‘v’ in graph ‘G’.A complete graph would have n(n-1)/2 edges.See below for proof.
+Biconnected graph: A connected graph which cannot be broken down into any further pieces by deletion of any vertex.It is a graph with no articulation point.
+        </p>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/connectedgraph.jpg" alt="">
+        <p>
+            Proof for complete graph: <br>
+
+Consider a complete graph with n nodes. Each node is connected to other n-1 nodes. Thus it becomes n * (n-1) edges. But this counts each edge twice because this is a undirected graph so divide it by 2. <br>
+Thus it becomes n(n-1)/2.
+        </p>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/completegraph.jpg" alt="">
+        <p>
+            Consider the given graph, <br>
+//Omit the repetitive edges  <br>
+Edges on node A = (A,B),(A,C),(A,E),(A,C). <br>
+Edges on node B = (B,C),(B,D),(B,E). <br>
+Edges on node C = (C,D),(C,E). <br>
+Edges on node D = (D,E). <br>
+Edges on node E = EMPTY. <a href="https://en.wikipedia.org/wiki/Graph_theory"target="_blank">https://en.wikipedia.org/wiki/Graph_theory</a> <br>
+Total edges = 4+3+2+1+0=10 edges. <br>
+Number of node = 5. <br>
+Thus n(n-1)/2=10 edges. <br>
+Thus proven.
+        </p>
+    </div>
+    
+        </section>
+        <div class="socialmedia">
+            <h1>Join with Us</h1>
+            <div id="icons">
+            <a href="">
+                <img src="https://1000logos.net/wp-content/uploads/2016/11/Facebook-logo.jpg" alt="fblogo">
+            </a>
+            <a href="https://www.instagram.com/iter.coding.wizards/"target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjB7GO7xrs5wonCVL72PVyZ6J2FSG-d4AA8w&usqp=CAU" alt="instalogo"></a>
+            <a href=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJpEBaypqBvS9wb-QuctMgJP9_DZVH-w_iHg&usqp=CAU" alt="telegramlogo"></a>
+            <a href=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbUiVWuViKc4WLnna7YaBemaG9ZcHBFgzM6w&usqp=CAU" alt="twitterlogo"></a>
+        </div>
+    </div>
+</div>
+    </section>
+</section>
+    
+</body>
+</html>
